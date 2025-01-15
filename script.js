@@ -35,14 +35,14 @@ submit.onclick = function (){
         return;
     }else{
     let item = {
-        title: title.value,
+        title: title.value.toLowerCase(),
         price: price.value,
         taxes: taxes.value,
         ads: ads.value,
         discount: discount.value,
         total: total.innerHTML,
         count: count.value,
-        category: category.value
+        category: category.value.toLowerCase()
     }
 
     if (mode === 'create'){
@@ -143,7 +143,7 @@ let search = document.getElementById('search');
 function SearchByTitle(){
     let table ='';
     for (var i = 0; i < products.length; i++){
-        if(products[i].title.includes(search.value)){
+        if(products[i].title.includes(search.value.toLowerCase())){
             table += `<tr>
                     <td>${i+1}</td>
                     <td>${products[i].title}</td>
@@ -193,7 +193,7 @@ function SearchByCategory(){
 function Search(){
     let table ='';
     for (var i = 0; i < products.length; i++){
-        if(products[i].title.includes(search.value)){
+        if(products[i].title.includes(search.value.toLowerCase())){
             table += `<tr>
                     <td>${i+1}</td>
                     <td>${products[i].title}</td>
